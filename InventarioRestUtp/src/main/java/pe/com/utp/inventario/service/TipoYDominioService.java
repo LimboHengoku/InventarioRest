@@ -6,5 +6,6 @@ import pe.com.utp.inventario.response.ListaTipoYDominioResponse;
 
 public interface TipoYDominioService {
 	public ListaTipoYDominioResponse listaTipoYdominio(String idTrans);
-	public GenericoResponse registrarTipoYDominio(String idTraString,RegistrarTipoYDominioRequest req);
+	public GenericoResponse registrarTipoYDominio(String idTraString, RegistrarTipoYDominioRequest req);
+	public GenericoResponse actualizarTipoYDominio(String idTraString, RegistrarTipoYDominioRequest req);
 }

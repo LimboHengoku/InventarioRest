@@ -20,4 +20,10 @@ public interface TipoYdominioDAO {
 	public Map<String, String> nuevoTipoImpre(String idTrans, TipoImpresora impresora);
 	public Map<String, String> nuevoTipoRecurso(String idTrans, TipoRecurso recurso);
 	public Map<String, String> nuevoDominio(String idTrans,Dominio dominio);
+	
+	public Map<String, String> actualizarTipoDispo(String idTrans,TipoDispositivo tipo);
+	public Map<String, String> actualizarTipoImpre(String idTrans, TipoImpresora impresora);
+	public Map<String, String> actualizarTipoRecurso(String idTrans, TipoRecurso recurso);
+	public Map<String, String> actualizarDominio(String idTrans,Dominio dominio);
+	
 }
