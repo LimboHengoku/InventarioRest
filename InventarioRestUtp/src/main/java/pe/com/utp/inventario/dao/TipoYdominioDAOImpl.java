@@ -421,8 +421,8 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 			if(!result.isEmpty()) {
 				
 				em.remove(t);
-				em.flush();
-				em.clear();
+//				em.flush();
+//				em.clear();
 				
 				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ELI);
 				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ELI);
