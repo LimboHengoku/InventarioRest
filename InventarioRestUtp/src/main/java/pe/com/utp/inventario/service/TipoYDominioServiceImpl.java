@@ -50,6 +50,7 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 					bean.setNomDispositivo(x.getNomDispositivo());
 					bean.setFechaRegistro(x.getFechaRegistro());
 					bean.setFlag(Constantes.FLAG_TIPO_DISPOSITIVO);
+					bean.setEstadoRegistro(x.getEstado());
 					lista.add(bean);
 
 				}
@@ -63,6 +64,7 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 					bean.setIdTipodispositivo(y.getIdTipoimpresora());
 					bean.setNomDispositivo(y.getNomTipoimpresora());
 					bean.setFlag(Constantes.FLAG_TIPO_IMPRESORA);
+					bean.setEstadoRegistro(y.getEstado());
 					lista.add(bean);
 				}
 			}
@@ -74,6 +76,7 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 					bean.setIdTipodispositivo(z.getIdTiporecurso());
 					bean.setNomDispositivo(z.getNomTiporecurso());
 					bean.setFlag(Constantes.FLAG_TIPO_RECURSO);
+					bean.setEstadoRegistro(z.getEstado());
 					lista.add(bean);
 				}
 			}
@@ -85,6 +88,7 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 					bean.setIdTipodispositivo(a.getIdDominio());
 					bean.setNomDispositivo(a.getNomDominio());
 					bean.setFlag(Constantes.FLAG_TIPO_DOMINIO);
+					bean.setEstadoRegistro(a.getEstado());
 					lista.add(bean);
 				}
 			}

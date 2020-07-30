@@ -9,6 +9,7 @@ public class TipoYDominioMapper {
 	private Integer idTipodispositivo;
 	private String nomDispositivo;
 	private Date fechaRegistro;
+	private String estadoRegistro;
 
 	public String getFlag() {
 		return flag;
@@ -40,6 +41,14 @@ public class TipoYDominioMapper {
 
 	public void setFechaRegistro(Date fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
+	}
+
+	public String getEstadoRegistro() {
+		return estadoRegistro;
+	}
+
+	public void setEstadoRegistro(String estadoRegistro) {
+		this.estadoRegistro = estadoRegistro;
 	}
 
 }

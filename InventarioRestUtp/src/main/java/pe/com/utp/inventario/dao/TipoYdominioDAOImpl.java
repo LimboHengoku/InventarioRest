@@ -37,7 +37,7 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 
 		try {
 
-			sql = sql + "from TipoDispositivo x where x.estado = 'A' " ;
+			sql = sql + "from TipoDispositivo " ;
 
 			tipoDispo = em.createQuery(sql).getResultList();
 
@@ -56,7 +56,7 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 
 		try {
 
-			sql = sql + "from TipoImpresora x where x.estado = 'A' ";
+			sql = sql + "from TipoImpresora ";
 
 			tipoImpresora = em.createQuery(sql).getResultList();
 
@@ -76,7 +76,7 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 
 		try {
 
-			sql = sql + "from TipoRecurso x where x.estado = 'A'";
+			sql = sql + "from TipoRecurso ";
 
 			tipoRecurso = em.createQuery(sql).getResultList();
 
@@ -95,7 +95,7 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 
 		try {
 
-			sql = sql + "from Dominio x where x.estado = 'A'";
+			sql = sql + "from Dominio";
 
 			listaDominio = em.createQuery(sql).getResultList();
 
