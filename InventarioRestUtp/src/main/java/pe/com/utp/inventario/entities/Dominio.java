@@ -23,6 +23,7 @@ public class Dominio implements java.io.Serializable {
 
 	private Integer idDominio;
 	private String nomDominio;
+	private String estado;
 	private List<UsuarioUbicacion> usuarioUbicacions = new ArrayList<>();
 
 	public Dominio() {
@@ -65,6 +66,15 @@ public class Dominio implements java.io.Serializable {
 
 	public void setUsuarioUbicacions(List<UsuarioUbicacion> usuarioUbicacions) {
 		this.usuarioUbicacions = usuarioUbicacions;
+	}
+
+	@Column(name = "estado")
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 }

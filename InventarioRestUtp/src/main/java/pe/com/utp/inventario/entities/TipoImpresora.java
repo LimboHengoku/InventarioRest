@@ -23,6 +23,7 @@ public class TipoImpresora implements java.io.Serializable {
 
 	private Integer idTipoimpresora;
 	private String nomTipoimpresora;
+	private String estado;
 	private List<DispositivoUsuario> dispositivoUsuarios = new ArrayList<>();
 
 	public TipoImpresora() {
@@ -65,6 +66,15 @@ public class TipoImpresora implements java.io.Serializable {
 
 	public void setDispositivoUsuarios(List<DispositivoUsuario> dispositivoUsuarios) {
 		this.dispositivoUsuarios = dispositivoUsuarios;
+	}
+
+	@Column(name ="estado")
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 }

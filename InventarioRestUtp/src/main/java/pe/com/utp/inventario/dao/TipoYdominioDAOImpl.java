@@ -37,7 +37,7 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 
 		try {
 
-			sql = sql + "from TipoDispositivo ";
+			sql = sql + "from TipoDispositivo x where x.estado = 'A' " ;
 
 			tipoDispo = em.createQuery(sql).getResultList();
 
@@ -56,7 +56,7 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 
 		try {
 
-			sql = sql + "from TipoImpresora ";
+			sql = sql + "from TipoImpresora x where x.estado = 'A' ";
 
 			tipoImpresora = em.createQuery(sql).getResultList();
 
@@ -76,7 +76,7 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 
 		try {
 
-			sql = sql + "from TipoRecurso ";
+			sql = sql + "from TipoRecurso x where x.estado = 'A'";
 
 			tipoRecurso = em.createQuery(sql).getResultList();
 
@@ -95,7 +95,7 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 
 		try {
 
-			sql = sql + "from Dominio ";
+			sql = sql + "from Dominio x where x.estado = 'A'";
 
 			listaDominio = em.createQuery(sql).getResultList();
 
@@ -412,17 +412,13 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 		
 		try {
 			
-			TipoDispositivo t = em.find(TipoDispositivo.class, tipo.getIdTipodispositivo());
-			
-			sql = sql + " from TipoDispositivo t where t.idTipodispositivo  = "+ t.getIdTipodispositivo();
+			sql = sql + " from TipoDispositivo t where t.idTipodispositivo  = "+ tipo.getIdTipodispositivo();
 			
 			List<TipoDispositivo> result = em.createQuery(sql).getResultList();
 			
 			if(!result.isEmpty()) {
 				
-				em.remove(t);
-//				em.flush();
-//				em.clear();
+				em.merge(tipo);
 				
 				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ELI);
 				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ELI);
@@ -460,12 +456,11 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 			
 			if(!result.isEmpty()) {
 				
-				em.remove(impresora);
-				em.flush();
-				em.clear();
+				em.merge(impresora);
 				
 				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ELI);
 				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ELI);
+			
 			}else {
 				
 				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_NO_ENCONTRADO);
@@ -498,9 +493,8 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 			
 			if(!result.isEmpty()) {
 				
-				em.remove(recurso);
-				em.flush();
-				em.clear();
+				em.merge(recurso);
+				
 				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ELI);
 				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ELI);
 			
@@ -535,9 +529,8 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 			
 			if(!result.isEmpty()) {
 				
-				em.remove(dominio);
-				em.flush();
-				em.clear();
+				em.merge(dominio);
+				
 				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ELI);
 				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ELI);
 			

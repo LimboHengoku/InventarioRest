@@ -24,6 +24,7 @@ public class TipoRecurso implements java.io.Serializable {
 	private Integer idTiporecurso;
 	private String nomTiporecurso;
 	private List<Recurso> recursos = new ArrayList<>();
+	private String estado;
 
 	public TipoRecurso() {
 	}
@@ -67,4 +68,14 @@ public class TipoRecurso implements java.io.Serializable {
 		this.recursos = recursos;
 	}
 
+	@Column(name = "estado")
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	
 }

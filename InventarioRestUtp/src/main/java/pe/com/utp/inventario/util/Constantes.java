@@ -60,4 +60,7 @@ public class Constantes {
 	public static final String FLAG_REGISTRAR_USUARIO = "R";
 	public static final String FLAG_ACTUALIZAR_USUARIO = "A";
 
+	
+	/** **/
+	public static final String ELIMINAR = "I";
 }
