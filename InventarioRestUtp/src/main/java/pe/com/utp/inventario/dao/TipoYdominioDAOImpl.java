@@ -412,13 +412,15 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 		
 		try {
 			
-			sql = sql + " from TipoDispositivo t where t.idTipodispositivo  = "+ tipo.getIdTipodispositivo();
+			TipoDispositivo t = em.find(TipoDispositivo.class, tipo.getIdTipodispositivo());
+			
+			sql = sql + " from TipoDispositivo t where t.idTipodispositivo  = "+ t.getIdTipodispositivo();
 			
 			List<TipoDispositivo> result = em.createQuery(sql).getResultList();
 			
 			if(!result.isEmpty()) {
 				
-				em.remove(tipo);
+				em.remove(t);
 				em.flush();
 				em.clear();
 				
