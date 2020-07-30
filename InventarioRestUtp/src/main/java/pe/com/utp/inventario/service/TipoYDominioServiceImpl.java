@@ -44,9 +44,9 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 			if (!tipoDispo.isEmpty()) {
 
 				for (TipoDispositivo x : tipoDispo) {
-					idNuevo++;
+//					idNuevo++;
 					TipoYDominioMapper bean = new TipoYDominioMapper();
-					bean.setIdTipodispositivo(idNuevo);
+					bean.setIdTipodispositivo(x.getIdTipodispositivo());
 					bean.setNomDispositivo(x.getNomDispositivo());
 					bean.setFechaRegistro(x.getFechaRegistro());
 					bean.setFlag(Constantes.FLAG_TIPO_DISPOSITIVO);
@@ -58,9 +58,9 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 
 			if (!tipoImpresora.isEmpty()) {
 				for (TipoImpresora y : tipoImpresora) {
-					idNuevo++;
+//					idNuevo++;
 					TipoYDominioMapper bean = new TipoYDominioMapper();
-					bean.setIdTipodispositivo(idNuevo);
+					bean.setIdTipodispositivo(y.getIdTipoimpresora());
 					bean.setNomDispositivo(y.getNomTipoimpresora());
 					bean.setFlag(Constantes.FLAG_TIPO_IMPRESORA);
 					lista.add(bean);
@@ -69,9 +69,9 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 
 			if (!tipoRecurso.isEmpty()) {
 				for (TipoRecurso z : tipoRecurso) {
-					idNuevo++;
+//					idNuevo++;
 					TipoYDominioMapper bean = new TipoYDominioMapper();
-					bean.setIdTipodispositivo(idNuevo);
+					bean.setIdTipodispositivo(z.getIdTiporecurso());
 					bean.setNomDispositivo(z.getNomTiporecurso());
 					bean.setFlag(Constantes.FLAG_TIPO_RECURSO);
 					lista.add(bean);
@@ -80,9 +80,9 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 
 			if (!tipoDominio.isEmpty()) {
 				for (Dominio a : tipoDominio) {
-					idNuevo++;
+//					idNuevo++;
 					TipoYDominioMapper bean = new TipoYDominioMapper();
-					bean.setIdTipodispositivo(idNuevo);
+					bean.setIdTipodispositivo(a.getIdDominio());
 					bean.setNomDispositivo(a.getNomDominio());
 					bean.setFlag(Constantes.FLAG_TIPO_DOMINIO);
 					lista.add(bean);
