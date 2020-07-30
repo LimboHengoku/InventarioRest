@@ -26,4 +26,10 @@ public interface TipoYdominioDAO {
 	public Map<String, String> actualizarTipoRecurso(String idTrans, TipoRecurso recurso);
 	public Map<String, String> actualizarDominio(String idTrans,Dominio dominio);
 	
+	public Map<String, String> eliminarTipoDispo(String idTrans,TipoDispositivo tipo);
+	public Map<String, String> eliminarTipoImpre(String idTrans, TipoImpresora impresora);
+	public Map<String, String> eliminarTipoRecurso(String idTrans, TipoRecurso recurso);
+	public Map<String, String> eliminarDominio(String idTrans,Dominio dominio);
+	
+	
 }

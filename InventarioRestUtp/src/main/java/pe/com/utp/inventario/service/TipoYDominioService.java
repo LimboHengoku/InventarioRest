@@ -8,4 +8,5 @@ public interface TipoYDominioService {
 	public ListaTipoYDominioResponse listaTipoYdominio(String idTrans);
 	public GenericoResponse registrarTipoYDominio(String idTraString, RegistrarTipoYDominioRequest req);
 	public GenericoResponse actualizarTipoYDominio(String idTraString, RegistrarTipoYDominioRequest req);
+	public GenericoResponse eliminarTipoYDominio(String idTraString, RegistrarTipoYDominioRequest req);
 }

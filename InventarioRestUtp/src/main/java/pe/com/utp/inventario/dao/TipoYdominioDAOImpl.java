@@ -402,5 +402,159 @@ public class TipoYdominioDAOImpl implements TipoYdominioDAO, Serializable {
 		return out;
 	}
 
+	
+	
+	public Map<String, String> eliminarTipoDispo(String idTrans, TipoDispositivo tipo) {
+		
+		Map<String,String> out = new HashMap<>();
+		
+		String sql = "";
+		
+		try {
+			
+			sql = sql + " from TipoDispositivo t where t.idTipodispositivo  = "+ tipo.getIdTipodispositivo();
+			
+			List<TipoDispositivo> result = em.createQuery(sql).getResultList();
+			
+			if(!result.isEmpty()) {
+				
+				em.remove(tipo);
+				em.flush();
+				em.clear();
+				
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ELI);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ELI);
+		
+				
+			}else {
+				
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_NO_ENCONTRADO);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_NO_ENCONTRADO);
+				
+			}
+			
+		} catch (Exception e) {
+			out.put(Constantes.CODIGO_GENERADO, "0");
+			out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_ERROR);
+			out.put(Constantes.MENSAJE_RESPUESTA, e.getMessage() + e);
+			e.printStackTrace();
+		}
+
+		return out;
+	}
+
+	@Override
+	public Map<String, String> eliminarTipoImpre(String idTrans, TipoImpresora impresora) {
+		
+		Map<String,String> out = new HashMap<>();
+		
+		String sql = "";
+		
+		try {
+			
+			sql = sql + "from TipoImpresora i where i.idTipoimpresora = " + impresora.getIdTipoimpresora() ;
+			
+			List<TipoImpresora> result = em.createQuery(sql).getResultList();
+			
+			if(!result.isEmpty()) {
+				
+				em.remove(impresora);
+				em.flush();
+				em.clear();
+				
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ELI);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ELI);
+			}else {
+				
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_NO_ENCONTRADO);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_NO_ENCONTRADO);
+			}
+			
+		} catch (Exception e) {
+			out.put(Constantes.CODIGO_GENERADO, "0");
+			out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_ERROR);
+			out.put(Constantes.MENSAJE_RESPUESTA, e.getMessage() + e);
+			e.printStackTrace();
+		}
+		
+		return out;
+	}
+
+	@Override
+	public Map<String, String> eliminarTipoRecurso(String idTrans, TipoRecurso recurso) {
+		
+		Map<String,String> out = new HashMap<>();
+		
+		String sql = "";
+		
+		try {
+			
+			sql = sql + "from TipoRecurso d where d.idTiporecurso =" + recurso.getIdTiporecurso();
+			
+
+			List<TipoImpresora> result = em.createQuery(sql).getResultList();
+			
+			if(!result.isEmpty()) {
+				
+				em.remove(recurso);
+				em.flush();
+				em.clear();
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ELI);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ELI);
+			
+			}else {
+				
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_NO_ENCONTRADO);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_NO_ENCONTRADO);
+			}
+			
+		} catch (Exception e) {
+			out.put(Constantes.CODIGO_GENERADO, "0");
+			out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_ERROR);
+			out.put(Constantes.MENSAJE_RESPUESTA, e.getMessage() + e);
+			e.printStackTrace();
+		}
+		
+		return out;
+	}
+
+	@Override
+	public Map<String, String> eliminarDominio(String idTrans, Dominio dominio) {
+		
+		Map<String,String> out = new HashMap<>();
+		
+		String sql = "";
+		
+		try {
+			
+			sql = sql + "from Dominio d where d.idDominio =" + dominio.getIdDominio();
+			
+			List<TipoImpresora> result = em.createQuery(sql).getResultList();
+			
+			if(!result.isEmpty()) {
+				
+				em.remove(dominio);
+				em.flush();
+				em.clear();
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ELI);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ELI);
+			
+			}else {
+				
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_NO_ENCONTRADO);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_NO_ENCONTRADO);
+			}
+			
+			
+		} catch (Exception e) {
+			out.put(Constantes.CODIGO_GENERADO, "0");
+			out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_ERROR);
+			out.put(Constantes.MENSAJE_RESPUESTA, e.getMessage() + e);
+			e.printStackTrace();
+		}
+		
+		return out;
+	}
+
 
 }

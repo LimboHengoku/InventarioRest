@@ -240,4 +240,75 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 
 	}
 
+
+
+	@Override
+	public GenericoResponse eliminarTipoYDominio(String idTraString, RegistrarTipoYDominioRequest req) {
+
+		GenericoResponse response = new GenericoResponse();
+
+		Map<String, String> result = new HashMap<>();
+
+		try {
+
+			if (req.getFlag().equals(Constantes.FLAG_TIPO_DISPOSITIVO)) {
+
+				TipoDispositivo tipo = new TipoDispositivo();
+				tipo.setIdTipodispositivo(req.getTipoDominio().getIdTipodispositivo());
+				tipo.setNomDispositivo(req.getTipoDominio().getNomDispositivo());
+//				tipo.setFechaRegistro(new Date());
+
+				result = tipoDAO.eliminarTipoDispo(idTraString, tipo);
+
+				response.setCodigoRespuesta(result.get(Constantes.CODIGO_RESPUESTA).toString());
+				response.setMensajeRespuesta(result.get(Constantes.MENSAJE_RESPUESTA).toString());
+
+			} else if (req.getFlag().equals(Constantes.FLAG_TIPO_IMPRESORA)) {
+
+				TipoImpresora impresora = new TipoImpresora();
+				impresora.setIdTipoimpresora(req.getTipoDominio().getIdTipodispositivo());
+				impresora.setNomTipoimpresora(req.getTipoDominio().getNomDispositivo());
+
+				result = tipoDAO.eliminarTipoImpre(idTraString, impresora);
+
+				response.setCodigoRespuesta(result.get(Constantes.CODIGO_RESPUESTA).toString());
+				response.setMensajeRespuesta(result.get(Constantes.MENSAJE_RESPUESTA).toString());
+
+			} else if (req.getFlag().equals(Constantes.FLAG_TIPO_RECURSO)) {
+
+				TipoRecurso recurso = new TipoRecurso();
+				recurso.setIdTiporecurso(req.getTipoDominio().getIdTipodispositivo());
+				recurso.setNomTiporecurso(req.getTipoDominio().getNomDispositivo());
+
+				result = tipoDAO.eliminarTipoRecurso(idTraString, recurso);
+
+				response.setCodigoRespuesta(result.get(Constantes.CODIGO_RESPUESTA).toString());
+				response.setMensajeRespuesta(result.get(Constantes.MENSAJE_RESPUESTA).toString());
+
+			} else if (req.getFlag().equals(Constantes.FLAG_TIPO_DOMINIO)) {
+				Dominio dom = new Dominio();
+				dom.setIdDominio(req.getTipoDominio().getIdTipodispositivo());
+				dom.setNomDominio(req.getTipoDominio().getNomDispositivo());
+
+				result = tipoDAO.eliminarDominio(idTraString, dom);
+
+				response.setCodigoRespuesta(result.get(Constantes.CODIGO_RESPUESTA).toString());
+				response.setMensajeRespuesta(result.get(Constantes.MENSAJE_RESPUESTA).toString());
+
+			} else {
+				response.setCodigoRespuesta(Constantes.VALOR_CODIGO_FLAG_INCORRECTO);
+				response.setMensajeRespuesta(Constantes.VALOR_MENSAJE_FLAG_INCORRECTO);
+			}
+
+		} catch (Exception e) {
+			response.setCodigoRespuesta(Constantes.VALOR_CODIGO_ERROR);
+			response.setMensajeRespuesta("ERROR en : " + e);
+			e.printStackTrace();
+		}
+
+		return response;
+
+	}
+
+
 }

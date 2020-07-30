@@ -21,6 +21,7 @@ public class Constantes {
 	public static String VALOR_CODIGO_REG_USUARIO = "1";
 	public static String VALOR_CODIGO_REG_USUARIO_UBI = "1";
 	public static String VALOR_CODIGO_REG_USUARIO_ERROR = "1";
+	public static String VALOR_CODIGO_REG_ELI = "0";
 			
 	public static String MENSAJE_OK = "Operacion Exitosa";
 	public static String MENSAJE_LISTA_NOEXITOSO = "No hay registros para mostrar";
@@ -34,6 +35,7 @@ public class Constantes {
 	public static String VALOR_MENSAJE_REG_USUARIO = "No se pudo registrar el usuario";
 	public static String VALOR_MENSAJE_REG_USUARIO_UBI = "No se pudo registrar La ubicacion del usuario";
 	public static String VALOR_MENSAJE_REG_USUARIO_ERROR = "Error al registrar";
+	public static String VALOR_MENSAJE_REG_ELI = "Se elimino el registro ";
 	
 	
 	public static String TEXTO_VACIO = "";

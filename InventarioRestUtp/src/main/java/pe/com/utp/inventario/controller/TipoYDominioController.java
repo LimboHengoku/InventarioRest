@@ -92,5 +92,26 @@ public class TipoYDominioController implements Serializable {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 
 	}
+	
+	@PostMapping(value = "eliminar", headers = Constantes.HEADER_JSON)
+	public ResponseEntity<?> eliminarTipoYDominio(@RequestBody RegistrarTipoYDominioRequest req) {
+
+		GenericoResponse response = new GenericoResponse();
+
+		try {
+
+			SimpleDateFormat formato = new SimpleDateFormat("ddMMyyyyHHmm");
+			Date fechaSistema = new Date();
+			String idTrans = formato.format(fechaSistema);
+
+			response = tipoService.eliminarTipoYDominio(idTrans, req);
+
+		} catch (Exception e) {
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+		}
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+
+	}
 
 }
