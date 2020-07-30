@@ -83,7 +83,7 @@ public class TipoYDominioController implements Serializable {
 			Date fechaSistema = new Date();
 			String idTrans = formato.format(fechaSistema);
 
-			response = tipoService.registrarTipoYDominio(idTrans, req);
+			response = tipoService.actualizarTipoYDominio(idTrans, req);
 
 		} catch (Exception e) {
 			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
