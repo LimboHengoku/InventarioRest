@@ -195,6 +195,7 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 				tipo.setIdTipodispositivo(req.getTipoDominio().getIdTipodispositivo());
 				tipo.setNomDispositivo(req.getTipoDominio().getNomDispositivo());
 				tipo.setFechaRegistro(new Date());
+				tipo.setEstado(req.getTipoDominio().getEstadoRegistro());
 
 				result = tipoDAO.actualizarTipoDispo(idTraString, tipo);
 
@@ -206,7 +207,8 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 				TipoImpresora impresora = new TipoImpresora();
 				impresora.setIdTipoimpresora(req.getTipoDominio().getIdTipodispositivo());
 				impresora.setNomTipoimpresora(req.getTipoDominio().getNomDispositivo());
-
+				impresora.setEstado(req.getTipoDominio().getEstadoRegistro());
+				
 				result = tipoDAO.actualizarTipoImpre(idTraString, impresora);
 
 				response.setCodigoRespuesta(result.get(Constantes.CODIGO_RESPUESTA).toString());
@@ -217,7 +219,8 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 				TipoRecurso recurso = new TipoRecurso();
 				recurso.setIdTiporecurso(req.getTipoDominio().getIdTipodispositivo());
 				recurso.setNomTiporecurso(req.getTipoDominio().getNomDispositivo());
-
+				recurso.setEstado(req.getTipoDominio().getEstadoRegistro());
+				
 				result = tipoDAO.actualizarTipoRecurso(idTraString, recurso);
 
 				response.setCodigoRespuesta(result.get(Constantes.CODIGO_RESPUESTA).toString());
@@ -227,6 +230,7 @@ public class TipoYDominioServiceImpl implements TipoYDominioService {
 				Dominio dom = new Dominio();
 				dom.setIdDominio(req.getTipoDominio().getIdTipodispositivo());
 				dom.setNomDominio(req.getTipoDominio().getNomDispositivo());
+				dom.setEstado(req.getTipoDominio().getEstadoRegistro());
 
 				result = tipoDAO.actualizarDominio(idTraString, dom);
 
