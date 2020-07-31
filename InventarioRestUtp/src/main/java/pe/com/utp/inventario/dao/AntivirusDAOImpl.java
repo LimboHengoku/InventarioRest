@@ -156,8 +156,8 @@ public class AntivirusDAOImpl implements AntivirusDAO {
 
 				em.merge(a);
 
-				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_OK);
-				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_OK);
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ACT);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ACT);
 
 			} else {
 
@@ -192,8 +192,8 @@ public class AntivirusDAOImpl implements AntivirusDAO {
 
 				em.merge(so);
 				
-				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_OK);
-				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_OK);
+				out.put(Constantes.CODIGO_RESPUESTA, Constantes.VALOR_CODIGO_REG_ACT);
+				out.put(Constantes.MENSAJE_RESPUESTA, Constantes.VALOR_MENSAJE_REG_ACT);
 
 			} else {
 
