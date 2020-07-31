@@ -23,6 +23,7 @@ public class SistemaOperativo implements java.io.Serializable {
 
 	private Integer idSo;
 	private String nomSo;
+	private String estado;
 	private List<CpuSo> cpuSos = new ArrayList<CpuSo>();
 
 	public SistemaOperativo() {
@@ -67,4 +68,14 @@ public class SistemaOperativo implements java.io.Serializable {
 		this.cpuSos = cpuSos;
 	}
 
+	@Column(name = "estado")
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	
 }

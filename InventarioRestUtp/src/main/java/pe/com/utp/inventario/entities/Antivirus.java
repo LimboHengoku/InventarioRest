@@ -23,6 +23,7 @@ public class Antivirus implements java.io.Serializable {
 
 	private Integer idAntivirus;
 	private String marca;
+	private String estado;
 	private List<Cpu> cpus = new ArrayList<>();
 
 	public Antivirus() {
@@ -57,4 +58,14 @@ public class Antivirus implements java.io.Serializable {
 		this.cpus = cpus;
 	}
 
+	@Column(name = "estado")
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	
 }

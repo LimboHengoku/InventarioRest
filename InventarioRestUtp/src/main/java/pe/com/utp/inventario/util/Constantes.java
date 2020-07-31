@@ -47,7 +47,8 @@ public class Constantes {
 	public static final String FLAG_TIPO_IMPRESORA = "I";
 	public static final String FLAG_TIPO_RECURSO = "R";
 	public static final String FLAG_TIPO_DOMINIO = "D";
-	
+	public static final String FLAG_ANTIVIRUS = "AN";
+	public static final String FLAG_SO = "SO";
 	
 	/** **/
 	public static final String ID_CONDICION = "idCondicion";
@@ -55,6 +56,7 @@ public class Constantes {
 	public static final String ID_UBICACION = "idUbicacion";
 	public static final String ID_USUARIO = "idUsuario";
 	public static final String ID_USUARIO_UBI = "idUsuUbi";
+	
 	
 	/** **/
 	public static final String FLAG_REGISTRAR_USUARIO = "R";
