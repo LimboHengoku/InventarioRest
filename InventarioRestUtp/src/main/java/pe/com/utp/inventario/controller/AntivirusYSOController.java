@@ -74,7 +74,7 @@ public class AntivirusYSOController implements Serializable {
 	}
 	
 	
-	@PostMapping(value = "registrar", headers = Constantes.HEADER_JSON)
+	@PostMapping(value = "actualizar", headers = Constantes.HEADER_JSON)
 	public ResponseEntity<?> actualizar(@RequestBody RegistrarAntivirusAndSORequest req){
 		
 		GenericoResponse response = new GenericoResponse();
